@@ -1,25 +1,34 @@
+package com.java.Object;
 
-public class A implements IntrA{
+import java.io.IOException;
 
-	static int a=1;
-	/*static{
-		System.out.println("B");
+public class A {
+	
+void check() throws IOException{
+	int b=10;
+	try{
+		int a = b/0;
+	}
+	/*catch(IOException a){
+		System.out.println("catch");
 	}*/
-	public static void main(String args[]){
-		System.out.println("A");
-		IntrA intrA = new A();
-		A a = new A();
-		a.getNum(2);
+    catch(Exception e){
+	System.out.println("catch");
+	}
+	finally{
+		System.out.println("Finally");
+	}
+}
+public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	A av = new A();
+	try {
+		av.check();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
 	}
 
-	private void getNum(int a){
-		a= a+1;
-		System.out.println(a);
-	}
-
-	@Override
-	public void getNum() {
-		// TODO Auto-generated method stub
-		
-	}
+}
+	 
 }

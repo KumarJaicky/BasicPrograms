@@ -1,28 +1,36 @@
+package com.java.Object;
 
-public class B{
+import java.util.ArrayList;
+import java.util.List;
+
+public class B extends C{
+	List<?> listraw = new ArrayList<>();
+	List<String> str = new ArrayList<String>();
+	
+	
+	public Long getName(int a,int b){
+		listraw = str;
+		str = listraw;
+		System.out.println("in B");
+		return 1;
+		
+	}
 
 	/**
 	 * @param args
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String s = " I live in India";
-		/*String[] split = s.split(" ");
-		String result = "";
-		for (int i = split.length - 1; i >= 0; i--) {
-		  result += (split[i] + " ");
-		}
-		System.out.println(result.trim());*/
-		/*StringBuilder strBldr = new StringBuilder();*/
-		String[] split = s.split(" ");
-		System.out.println(split[0]);
-		/*char[] charArr = s.toCharArray();
-		for(int i= charArr.length-1; i>0;i--){
-			strBldr=strBldr.append(charArr[i]);
-			
-		}
-		System.out.println(strBldr);*/
-		
+C c = new B();
+c.getName(1, 2);
 	}
 
+}
+
+class C{
+	public Long getName(int a , int b){
+		System.out.println("in c");
+		return 0L;
+	}
+	
 }

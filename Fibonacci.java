@@ -1,22 +1,30 @@
+package com.java.Object;
+
+import java.util.Scanner;
 
 public class Fibonacci {
-
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args)
-	{
-	    for(int index = 0;index<=10;index++)
-	   
-	    {
-	        System.out.println(fibonacci(index));
-	    }
+	
+	public static void main(String args[]){
+		change("aabcbdc","abc");
 	}
-	    public static long fibonacci (int i)
-	    {
-	        if (i == 0 || i==1) return i;
-
-	        else return fibonacci(i - 1) + fibonacci(i - 2);
-	    }
+	
+		
+public static void change(String s, String t){
+	int count=0;
+	while(s.length()>=t.length()){
+	boolean present =  s.contains(t);
+	
+	if(present){
+		count++;
+		s=s.replaceAll(t, "");
+	}else{
+		break;
+	}
+	
+	}
+	System.out.println(count);
+	
+	
+}
 
 }
